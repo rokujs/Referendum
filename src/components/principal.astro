@@ -1,0 +1,57 @@
+
+
+<section class="h-screen w-full bg-bg-secundary flex flex-col items-center justify-center ">
+  <div class="min-h-[60vh]">
+    <div class="mb-16 flex items-center justify-center">
+      <h1 class="text-4xl lg:text-6xl text-center text-font-primary max-w[90vw] lg:max-w-[50vw]">Referendo Constitucional: Por un Trabajo Digno en Colombia</h1>
+    </div>
+  <div class="max-w-[90vw] lg:max-w-[60vw] mx-auto flex flex-col lg:flex-row items-start justify-between">
+    <div class="flex items-center justify-center w-full">
+      <img
+        src="/principal.jpg"
+        alt="Imagen principal"
+        class="cursor-pointer rounded-xl shadow-lg transition-transform duration-200 hover:scale-105"
+        id="main-img"
+        tabindex="0"
+        />
+    </div>
+    <div class="mt-6 lg:ml-12 w-full lg:max-w-[15vw]">
+      <p class="text-center lg:text-left text-2xl text-indigo-800">
+        Iniciativa ciudadana para proteger los derechos laborales de trabajadores informales y enfrentar la automatización.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/70 hidden">
+  <div class="relative flex items-center justify-center w-full h-full">
+    <button class="absolute top-8 right-12 text-4xl text-white bg-transparent border-none cursor-pointer z-10" id="close-modal" aria-label="Cerrar">&times;</button>
+    <img src="/principal.jpg" alt="Imagen ampliada" class="max-w-[90vw] max-h-[80vh] rounded-xl shadow-2xl" />
+  </div>
+</div>
+</section>
+
+<script>
+const img = document.getElementById('main-img');
+const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close-modal');
+
+if (img && modal && closeBtn) {
+  img.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.add('hidden');
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('hidden') && e.key === 'Escape') {
+      modal.classList.add('hidden');
+    }
+  });
+}
+</script>
