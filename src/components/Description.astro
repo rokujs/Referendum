@@ -1,0 +1,60 @@
+---
+import { getCollection } from "astro:content";
+
+let points_collection = await getCollection("points");
+const points = points_collection.sort((a, b) => a.data.order - b.data.order);
+
+console.log(points);
+---
+
+<section
+  class='py-10 lg:h-screen w-full bg-violet-500 flex flex-col items-center justify-center'
+>
+  <div
+    style='box-shadow: 10px 10px 0px 3px var(--color-fuchsia-500);'
+    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] bg-violet-700 px-8 py-6 lg:px-16 rounded-lg'
+  >
+    <div>
+      <h2 class='text-4xl txt-center text-fuchsia-500 mb-12 font-bold'>
+        La Iniciativa Ciudadana por el Referendo
+      </h2>
+      <p class='text-lg text-slate-300'>
+        Los ciudadanos firmantes, amparados en el artículo 378 de la
+        Constitución Política de Colombia y la Ley Estatutaria 134 de 1994,
+        presentan formalmente esta iniciativa popular. El objetivo es convocar
+        un referendo constitucional para reformar la Carta Política, protegiendo
+        los derechos laborales de los trabajadores informales y regulando una
+        transición justa ante la automatización y transformación tecnológica del
+        trabajo.
+      </p>
+    </div>
+    <div class='mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4'>
+      {points.map((point) => (
+        <div class='flex'>
+          <div class='w-[100px] mr-3'>
+            <div class='inline-block p-2 rounded-lg bg-fuchsia-500'>
+              <img
+                src={point.data.icon}
+                width='30'
+                height='30'
+                alt={point.data.title + ' Icon'}
+              />
+            </div>
+          </div>
+          <div>
+            <div class="mb-2">
+              <h4 class="text-xl font-semibold text-slate-200">
+                {point.data.title}
+              </h4>
+            </div>
+            <div>
+              <p class="text-lg text-slate-300 font-light">
+                {point.body}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
