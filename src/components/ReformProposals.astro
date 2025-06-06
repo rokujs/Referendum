@@ -1,0 +1,52 @@
+---
+const articles = [
+  {
+    title: "Artículo 1: Protección del Trabajo Informal",
+    body: "Adición al artículo 53 para garantizar derechos laborales y de seguridad social a trabajadores informales, con mecanismos diferenciales de protección y formalización.",
+  },
+  {
+    title: "Artículo 2: Automatización y Transición Justa",
+    body: "Adición del artículo 53A para asegurar una transición justa ante la automatización, con obligaciones para empresas y medidas estatales de capacitación y empleo.",
+  },
+  {
+    title: "Artículo 3: Renta Básica Transitoria",
+    body: "Creación de un derecho a renta básica transitoria para quienes pierdan ingresos por automatización, reglamentado por ley.",
+  },
+]
+---
+
+<section class='w-full bg-violet-900 flex flex-col items-center justify-center'>
+  <div
+    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] px-8 py-6 lg:px-16'
+  >
+    <div>
+      <div class='mb-10'>
+        <h2 class='text-4xl txt-center text-fuchsia-500 font-bold'>
+          Propuestas de Reforma Constitucional
+        </h2>
+      </div>
+      <p class='text-lg text-slate-300'>
+        El proyecto de referendo propone adiciones y creaciones de artículos en
+        la Constitución Política de Colombia para abordar la protección laboral
+        en la informalidad y frente a la automatización. Se busca garantizar
+        derechos progresivos a trabajadores informales, establecer una
+        transición justa ante la automatización, crear una renta básica
+        transitoria y proteger al campesinado y mujeres rurales.
+      </p>
+    </div>
+    <div class='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6'>
+      {
+        articles.map(article => (
+          <div class='py-6 px-8 bg-indigo-900 rounded-lg min-h-70'>
+            <div class='mb-2'>
+              <h4 class='text-xl font-semibold text-slate-200'>
+                {article.title}
+              </h4>
+            </div>
+            <p class='text-lg text-slate-300'>{article.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
