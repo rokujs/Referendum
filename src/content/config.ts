@@ -8,4 +8,12 @@ const points = defineCollection({
   }),
 })
 
-export const collections = { points }
+const keys = defineCollection({
+  schema: z.object({
+    title: z.string(),
+    side: z.enum(["left", "right"]),
+    order: z.number(),
+  })
+})
+
+export const collections = { points, keys };
