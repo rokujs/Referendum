@@ -1,0 +1,106 @@
+---
+const list = [
+  {
+    title: "Nuevas Formas de Empleo",
+    description:
+      "Reconocer y regular dignamente nuevas modalidades de trabajo.",
+  },
+  {
+    title: "Formalización Progresiva",
+    description:
+      "Establecer mecanismos flexibles para la formalización laboral.",
+  },
+  {
+    title: "Equidad Laboral",
+    description:
+      "Promover la equidad y cerrar brechas de género, edad, ruralidad y clase.",
+  },
+  {
+    title: "Inspección Eficaz",
+    description: "Impulsar un sistema de control del trabajo decente.",
+  },
+]
+---
+
+<section
+  class='py-8 px-12 lg:py-16 lg:px-24 w-full bg-pink-300 flex flex-col items-center justify-center'
+>
+  <div class='w-full lg:max-w-[50vw]'>
+    <div class='flex items-center justify-center'>
+      <h2 class='text-4xl txt-center text-indigo-800 font-bold'>
+        Finalidad y Justificación del Referendo
+      </h2>
+    </div>
+    <div class='my-16'>
+      <p class='text-lg text-slate-800 mb-8'>
+        El referendo busca una reforma laboral que reconozca nuevas formas de
+        empleo, establezca mecanismos de formalización y garantice derechos
+        básicos para todos los trabajadores. Promueve la equidad laboral y un
+        sistema eficaz de inspección del trabajo decente. Jurídicamente, se
+        fundamenta en el artículo 1° de la Constitución, que consagra a Colombia
+        como un Estado social de derecho, donde el trabajo es pilar de la
+        dignidad humana y cohesión social.
+      </p>
+      <p class='text-lg text-slate-800'>
+        La propuesta busca actualizar esta visión, incluyendo a quienes han sido
+        invisibilizados y anticipando los desafíos de la economía digital. Es un
+        llamado a la ciudadanía para un pacto de justicia social, reduciendo la
+        pobreza y fortaleciendo la seguridad social.
+      </p>
+    </div>
+    <div>
+      {
+        list.map((item, i) => (
+          <div class='mb-6 flex items-start'>
+            <div class='w-20 h-20'>
+              <div class='flex items-center justify-center w-full h-full'>
+                <div class="arrow-down-number">
+                  {i + 1}
+                </div>
+              </div>
+            </div>
+            <div class="ml-4">
+            <div class='mb-2'>
+              <h3 class='text-xl font-bold text-indigo-800'>
+                {item.title}
+              </h3>
+            </div>
+            <p class='text-lg text-slate-800'>{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+.arrow-down-number {
+  position: relative;
+  top: -15px;
+  width: 80px;
+  height: 60px;
+  background: #312e81; /* indigo-900 */
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px 12px 0 0;
+  margin: 0 auto;
+
+}
+.arrow-down-number::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -24px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 24px solid #312e81;
+}
+</style>
