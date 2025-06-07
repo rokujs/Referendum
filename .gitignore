@@ -26,3 +26,6 @@ pnpm-debug.log*
 # media files
 *.png
 *.jpg
+
+.wrangler
+.vscode
