@@ -1,6 +1,6 @@
 {
   "name": "referendum",
-  "type": "web",
+  "type": "module",
   "version": "0.9.0",
   "scripts": {
     "dev": "astro dev",

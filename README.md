@@ -1,48 +1,50 @@
-# Astro Starter Kit: Basics
+# Referendo Constitucional: Por un Trabajo Digno en Colombia
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+Este proyecto es una página web informativa sobre la iniciativa ciudadana de referendo constitucional en Colombia, orientada a proteger los derechos laborales de los trabajadores informales, enfrentar los retos de la automatización y promover la equidad social.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Tecnologías utilizadas
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Astro**: Framework principal para la construcción del sitio web.
+- **Tailwind CSS**: Utilizado para el diseño y estilos responsivos.
+- **Vite**: Herramienta de desarrollo y bundler (integrado con Astro).
+- **Cloudflare**: Adaptador para despliegue en Cloudflare.
+- **pnpm**: Gestor de paquetes utilizado en el proyecto.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Estructura del proyecto
 
-## 🚀 Project Structure
+- `src/components/`: Componentes reutilizables de la página.
+- `src/layouts/`: Plantillas de layout para las páginas.
+- `src/pages/`: Páginas principales del sitio.
+- `src/content/`: Colecciones de contenido dinámico (puntos, claves, etc).
+- `public/`: Archivos estáticos (imágenes, íconos, etc).
+- `styles/`: Archivos CSS globales.
 
-Inside of your Astro project, you'll see the following folders and files:
+## Comandos disponibles
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+- `pnpm install`: Instala las dependencias del proyecto.
+- `pnpm dev`: Inicia el servidor de desarrollo en modo local.
+- `pnpm build`: Genera la versión de producción del sitio.
+- `pnpm preview`: Previsualiza el sitio generado tras el build.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Cómo iniciar el proyecto
 
-## 🧞 Commands
+1. Clona el repositorio y entra en la carpeta del proyecto.
+2. Instala las dependencias:
+   ```sh
+   pnpm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```sh
+   pnpm dev
+   ```
+4. Abre tu navegador en `http://localhost:4321` (o el puerto indicado en consola).
 
-All commands are run from the root of the project, from a terminal:
+## Despliegue
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+El proyecto está preparado para ser desplegado en Cloudflare utilizando el adaptador oficial de Astro.
 
-## 👀 Want to learn more?
+## Notas adicionales
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- El contenido principal se gestiona mediante archivos Markdown en la carpeta `src/content/`.
+- El diseño es completamente responsivo y accesible.
+- Para modificar los estilos globales, edita `src/styles/global.css`.
