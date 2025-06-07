@@ -1,11 +1,9 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary: #BEAEF5;
-  --color-secundary: #AEB4F5;
-  --color-bg-primary: #8e51ff;
-  --color-bg-secundary: #D6AEF5;
-  --color-dark: #AECBF5;
-  --color-font-primary: #3F4259;
-  --color-font-secundary: #F5AEB4;
-}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Newsreader', serif;
+	}
+	p, a, li, span {
+		font-family: 'Roboto', sans-serif;
+	}
