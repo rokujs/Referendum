@@ -1,0 +1,50 @@
+---
+const articles = [
+  {
+    title: "Revisión Formal",
+    body: "Autorizar la revisión formal del proyecto de referendo.",
+  },
+  {
+    title: "Aprobación de Formato",
+    body: "Aprobar el formato para la recolección de apoyos ciudadanos.",
+  },
+  {
+    title: "Validación y Registro",
+    body: "Proceder con el trámite de validación y registro del Comité Promotor.",
+  },
+]
+---
+
+<section class='w-full bg-violet-900 flex flex-col items-center justify-center'>
+  <div
+    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] px-8 py-6 lg:px-16'
+  >
+    <div>
+      <div class='mb-10'>
+        <h2 class='text-4xl txt-center text-fuchsia-500 font-bold'>
+          Comité Promotor y Solicitudes
+        </h2>
+      </div>
+      <p class='text-lg text-slate-300 mb-8'>
+        El comité promotor de esta iniciativa se denomina "COMITÉ PROMOTOR “SOMOS EL PODER DE LA GENTE”". Este comité es el encargado de liderar el proceso de recolección de apoyos ciudadanos y de coordinar con la Registraduría Nacional del Estado Civil.
+      </p>
+      <p class='text-lg text-slate-300'>
+        Se solicita a la Registraduría Nacional del Estado Civil autorizar la revisión formal del proyecto de referendo, aprobar el formato para la recolección de apoyos ciudadanos y proceder con el trámite de validación y registro del Comité Promotor conforme a la ley. Se adjuntan copias de los documentos de identidad de los integrantes, la exposición de motivos y el texto del proyecto normativo.
+      </p>
+    </div>
+    <div class='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6'>
+      {
+        articles.map(article => (
+          <div class='py-6 px-8 bg-indigo-900 rounded-lg'>
+            <div class='mb-2'>
+              <h5 class='text-xl font-semibold text-slate-200'>
+                {article.title}
+              </h5>
+            </div>
+            <p class='text-lg text-slate-300'>{article.body}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
