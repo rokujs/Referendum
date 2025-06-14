@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Sidebar from "../components/Sidebar.astro";
 ---
 
 
@@ -32,8 +33,11 @@ import "../styles/global.css";
 		<title>Referendo Constitucional: Por un Trabajo Digno en Colombia | Iniciativa Ciudadana</title>
 	</head>
 	<body>
-		<main>
-			<slot />
+		<main class="flex">
+			<div class="w-full h-full">
+				<slot />
+			</div>
+				<Sidebar />
 		</main>
 	</body>
 </html>
