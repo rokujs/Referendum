@@ -7,3 +7,11 @@
 	p, a, li, span {
 		font-family: 'Roboto', sans-serif;
 	}
+
+@theme {
+  --color-sidebar: #DBDBDB;
+	--color-title-sidebar: #410066;
+	--color-subtitle-sidebar: #13001B;
+	--color-primary-bg: #13001B;
+	--color-primary-text: #DBDBDB;
+}
