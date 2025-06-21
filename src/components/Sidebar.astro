@@ -1,11 +1,129 @@
-<div class="hidden lg:block sticky top-0 h-screen w-[40vw] bg-indigo-100 text-center px-16">
-  <div class="mt-50">
-    <h1 class="font-bold text-indigo-800">
-      <span class="block text-8xl">REFERENDO</span>
-      <span class="block text-6xl">CONSTITUCIONAL</span>
-    </h1>
+---
+const items = [
+  "La iniciativa ciudadana por el referendo",
+  "Desafiós actuales del mercado laboral colombiano",
+  "Objetivos clave del referendo",
+  "Fianlidad y justificación del referendo",
+  "Propuestas de reforma constitucional",
+  "Protección al campesinado y otros sectores",
+  "Reforma pensional y vigencia",
+  "Preguntas clave el referendo",
+  "Comité promotor y solicitudes",
+]
+---
+
+<div class='sticky top-0 lg:w-[40vw] h-screen'>
+  <div
+    id='sidebar'
+    class='hidden lg:block h-screen w-full bg-sidebar text-center px-16 py-50'
+  >
+    <div>
+      <h1 class='font-bold text-title-sidebar'>
+        <span class='block text-8xl'>REFERENDO</span>
+        <span class='block text-6xl'>CONSTITUCIONAL</span>
+      </h1>
+    </div>
+    <div class='mt-5'>
+      <p class='text-lg italic text-subtitle-sidebar'>
+        Por un trabajo digno en <b>Colombia</b>
+      </p>
+    </div>
   </div>
-  <div class="mt-5">
-    <p class="text-lg italic ">Por un trabajo digno en <b>Colombia</b></p>
+  <div
+    id='boxOpenMenuBtn'
+    class='block absolute top-0 right-0 w-20 h-20 flex justify-center align-items'
+  >
+    <button
+      id='openMenuBtn'
+      aria-label='Abrir menú'
+      class='text-title-sidebar cursor-pointer'
+    >
+      <svg
+        width='64'
+        height='64'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='2'
+        viewBox='0 0 32 32'
+        ><path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M4 6h16M4 12h16M4 18h16'></path></svg
+      >
+    </button>
+  </div>
+
+  <div
+    id='boxCloseMenuBtn'
+    class='hidden absolute top-0 right-0 w-20 h-20 flex justify-center align-items z-3'
+  >
+    <button
+      id='closeMenuBtn'
+      aria-label='Cerrar menú'
+      class='text-title-sidebar cursor-pointer'
+    >
+      <svg
+        width='64'
+        height='64'
+        fill='none'
+        stroke='currentColor'
+        stroke-width='2'
+        viewBox='0 0 32 32'
+        ><path
+          stroke-linecap='round'
+          stroke-linejoin='round'
+          d='M6 18L18 6M6 6l12 12'></path></svg
+      >
+    </button>
+  </div>
+  <div id='menu' class='w-full flex flex-row-reverse hidden'>
+    <nav
+      class='bg-sidebar flex flex-col gap-6 absolute w-screen lg:w-full h-screen'
+    >
+      <ul class='flex flex-col mt-10 lg:mt-20'>
+        {
+          items.map(item => (
+            <li class='border-b-4 border-subtitle-sidebar py-2 lg:py-8 px-10'>
+              <a
+                href='#'
+                class='text-lg font-semibold text-subtitle-sidebar cursor-pointer menu-link py-5 block'
+              >
+                {item}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
 </div>
+
+<script is:inline>
+  // Pure JS hamburger menu
+  if (typeof window !== "undefined") {
+    const openBtn = document.getElementById("openMenuBtn")
+    const closeBtn = document.getElementById("closeMenuBtn")
+    const boxOpenBtn = document.getElementById("boxOpenMenuBtn")
+    const boxCloseBtn = document.getElementById("boxCloseMenuBtn")
+    const menu = document.getElementById("menu")
+    const sidebar = document.getElementById("sidebar")
+    function openMenu() {
+      menu.classList.remove("hidden")
+      boxCloseBtn.classList.remove("hidden")
+      boxOpenBtn.classList.add("hidden")
+      sidebar.classList.add("lg:hidden")
+    }
+    function closeMenu() {
+      menu.classList.add("hidden")
+      boxCloseBtn.classList.add("hidden")
+      boxOpenBtn.classList.remove("hidden")
+      sidebar.classList.remove("lg:hidden")
+    }
+    openBtn && openBtn.addEventListener("click", openMenu)
+    closeBtn && closeBtn.addEventListener("click", closeMenu)
+    // Close menu when clicking a link
+    document.querySelectorAll(".menu-link").forEach(link => {
+      link.addEventListener("click", closeMenu)
+    })
+  }
+</script>
