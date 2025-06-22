@@ -23,9 +23,5 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# media files
-*.png
-*.jpg
-
 .wrangler
 .vscode
