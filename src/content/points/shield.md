@@ -1,6 +1,6 @@
 ---
 title: Protección Laboral
-icon: /shield.svg
+icon: /labor_protection.png
 order: 2
 ---
 Proteger a la población trabajadora de los efectos negativos de la automatización.

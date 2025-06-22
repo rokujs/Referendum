@@ -6,17 +6,16 @@ const points = points_collection.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <section
-  class='py-10 lg:py-20 w-full bg-violet-900 flex flex-col items-center justify-center'
+  class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center'
 >
   <div
-    style='box-shadow: 10px 10px 0px 3px var(--color-fuchsia-600);'
-    class='flex flex-col items-center justify-center max-w-[90vw] lg:max-w-[50vw] bg-violet-700 px-8 py-6 lg:py-14 lg:px-16 rounded-lg'
+    class='flex flex-col items-center justify-center w-full bg-secondary-bg py-10'
   >
-    <div>
-      <h2 class='text-4xl txt-center text-fuchsia-500 mb-12 font-bold'>
+    <div class="px-8 py-6 lg:py-14 lg:px-20">
+      <h2 class='text-6xl text-secondary-text mb-12 font-bold'>
         La Iniciativa Ciudadana por el Referendo
       </h2>
-      <p class='text-lg text-slate-300'>
+      <p class='text-lg text-primary-text'>
         Los ciudadanos firmantes, amparados en el artículo 378 de la
         Constitución Política de Colombia y la Ley Estatutaria 134 de 1994,
         presentan formalmente esta iniciativa popular. El objetivo es convocar
@@ -26,27 +25,25 @@ const points = points_collection.sort((a, b) => a.data.order - b.data.order);
         trabajo.
       </p>
     </div>
-    <div class='mt-10 grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-4'>
-      {points.map((point) => (
-        <div class='flex'>
-          <div class='w-[100px] mr-3'>
-            <div class='inline-block p-2 rounded-lg bg-fuchsia-500'>
+    <div class='grid grid-cols-1 w-full gap-6 lg:gap-4 py-6 lg:py-14'>
+      {points.map((point, index) => (
+        <div class=`px-8 lg:px-20 py-15 flex justify-between border-t-4 border-secondary-text items-center flex-col ${index % 2 !== 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`>
+          <div class='w-70 mb-5 lg:mb-0'>
+            <div class=`inline-block ${index % 2 !== 0 ? "lg:mr-10" : "lg:ml-10"}`>
               <img
                 src={point.data.icon}
-                width='30'
-                height='30'
                 alt={point.data.title + ' Icon'}
               />
             </div>
           </div>
           <div>
             <div class="mb-2">
-              <h4 class="text-xl font-bold text-slate-200">
+              <h4 class="text-3xl font-bold text-secondary-text">
                 {point.data.title}
               </h4>
             </div>
             <div>
-              <p class="text-lg text-slate-300">
+              <p class="text-lg text-primary-text">
                 {point.body}
               </p>
             </div>
