@@ -23,16 +23,16 @@ const list = [
 ---
 
 <section
-  class='py-8 px-12 lg:py-16 lg:px-24 w-full bg-pink-300 flex flex-col items-center justify-center'
+  class='py-10 lg:py-20 px-5 lg:px-40 w-full bg-secondary-bg flex flex-col items-center justify-center'
 >
-  <div class='w-full lg:max-w-[50vw]'>
-    <div class='flex items-center justify-center'>
-      <h2 class='text-4xl txt-center text-indigo-800 font-bold'>
+  <div class='w-full text-sidebar'>
+    <div>
+      <h2 class='text-6xl font-bold'>
         Finalidad y Justificación del Referendo
       </h2>
     </div>
-    <div class='my-16'>
-      <p class='text-lg text-slate-800 mb-8'>
+    <div class='text-lg my-16'>
+      <p class='mb-8'>
         El referendo busca una reforma laboral que reconozca nuevas formas de
         empleo, establezca mecanismos de formalización y garantice derechos
         básicos para todos los trabajadores. Promueve la equidad laboral y un
@@ -41,7 +41,7 @@ const list = [
         como un Estado social de derecho, donde el trabajo es pilar de la
         dignidad humana y cohesión social.
       </p>
-      <p class='text-lg text-slate-800'>
+      <p>
         La propuesta busca actualizar esta visión, incluyendo a quienes han sido
         invisibilizados y anticipando los desafíos de la economía digital. Es un
         llamado a la ciudadanía para un pacto de justicia social, reduciendo la
@@ -52,20 +52,18 @@ const list = [
       {
         list.map((item, i) => (
           <div class='mb-6 flex items-start'>
-            <div class='w-20 h-20'>
+            <div class='w-40 h-40'>
               <div class='flex items-center justify-center w-full h-full'>
-                <div class="arrow-down-number">
-                  {i + 1}
+                <div class='arrow-down-number'>
+                  <span class='text-7xl text-secondary-bg'>{i + 1}</span>
                 </div>
               </div>
             </div>
-            <div class="ml-4">
-            <div class='mb-2'>
-              <h3 class='text-xl font-bold text-indigo-800'>
-                {item.title}
-              </h3>
-            </div>
-            <p class='text-lg text-slate-800'>{item.description}</p>
+            <div class='ml-4'>
+              <div class='mb-2'>
+                <h3 class='text-2xl font-bold'>{item.title}</h3>
+              </div>
+              <p class='text-lg'>{item.description}</p>
             </div>
           </div>
         ))
@@ -75,32 +73,28 @@ const list = [
 </section>
 
 <style>
-.arrow-down-number {
-  position: relative;
-  top: -15px;
-  width: 80px;
-  height: 60px;
-  background: #312e81; /* indigo-900 */
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px 12px 0 0;
-  margin: 0 auto;
-
-}
-.arrow-down-number::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -24px;
-  transform: translateX(-50%);
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 40px solid transparent;
-  border-top: 24px solid #312e81;
-}
+  .arrow-down-number {
+    position: relative;
+    top: -35px;
+    width: 120px;
+    height: 110px;
+    background: #dbdbdb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0 0;
+    margin: 0 auto;
+  }
+  .arrow-down-number::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -40px;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 60px solid transparent;
+    border-right: 60px solid transparent;
+    border-top: 40px solid #dbdbdb;
+  }
 </style>
