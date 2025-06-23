@@ -11,7 +11,7 @@ const points = defineCollection({
 const keys = defineCollection({
   schema: z.object({
     title: z.string(),
-    side: z.enum(["left", "right"]),
+    image: z.string(),
     order: z.number(),
   })
 })

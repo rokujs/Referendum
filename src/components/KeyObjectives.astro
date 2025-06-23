@@ -3,30 +3,22 @@ import { getCollection } from "astro:content"
 
 const keys = await getCollection("keys")
 
-const keys_left = keys
-  .filter(key => key.data.side === "left")
-  .sort((a, b) => a.data.order - b.data.order)
-const keys_right = keys
-  .filter(key => key.data.side === "right")
-  .sort((a, b) => a.data.order - b.data.order)
-
-// icons
-const icons = ["/building.svg", "/hammer.svg", "/hands-helping.svg", "/job-transition.svg", "/money-bill.svg"]
+const key_list = keys.sort((a, b) => a.data.order - b.data.order)
 ---
 
 <section
-  class='w-full bg-violet-900 flex flex-col items-center justify-center'
+  class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-secondary-bg flex flex-col items-center justify-center'
 >
   <div
-    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] px-8 py-6 lg:px-0'
+    class='flex flex-col items-center justify-center w-full bg-primary-bg px-8 py-10 lg:py-14 lg:px-20'
   >
     <div>
-      <div class="mb-10">
-        <h2 class='text-4xl txt-center text-fuchsia-500 font-bold'>
+      <div class='mb-10'>
+        <h2 class='text-6xl text-center text-secondary-text font-bold'>
           Objetivos Clave del Referendo
         </h2>
       </div>
-      <p class='text-lg text-slate-300'>
+      <p class='text-lg text-primary-text'>
         El referendo busca establecer un marco constitucional que aborde las
         realidades laborales contemporáneas. Se propone reconocer los derechos
         de los trabajadores informales, asegurar políticas de formalización, y
@@ -34,57 +26,24 @@ const icons = ["/building.svg", "/hammer.svg", "/hands-helping.svg", "/job-trans
         programas de reconversión laboral y protección de ingresos.
       </p>
     </div>
-    <div class='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-4'>
-      <div>
-       {keys_left.map(key => (
-          <div class='mb-6 lg:text-right'>
-            <div class='mb-2'>
-              <h4 class='text-xl font-semibold text-slate-200'>
+    <div class='mt-40 grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-30'>
+      {
+        key_list.map(key => (
+          <div class='bg-sidebar h-full min-h-70 rounded-xl'>
+            <div class="w-40 -mt-20 mx-auto">
+              <img class="w-full" src={key.data.image} alt=`${key.data.image} image` />
+            </div>
+            <div class="text-subtitle-sidebar px-10 py-5">
+            <div class='my-7'>
+              <h4 class='text-2xl text-center font-semibold'>
                 {key.data.title}
               </h4>
             </div>
-            <p class='text-lg text-slate-300'>
-              {key.body}
-            </p>
-          </div>
-        ))}
-      </div>
-      <div class="flex items-center justify-center">
-        <div class="relative w-60 h-60 mx-auto">
-          <div class="absolute w-full h-full rounded-full border-5 border-violet-700" style="top:0;left:0;"></div>
-          {icons.map((icon, i) => (
-            <div
-              class="absolute w-12 h-12 bg-violet-700 rounded-full flex items-center justify-center"
-              style={`
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%) rotate(${i * 72}deg) translateY(-120px);
-              `}
-            >
-              <img
-                src={icon}
-                alt={`Icon ${i + 1}`}
-                class="w-6 h-6 mx-auto my-auto"
-                style="filter: invert(100%) sepia(22%) saturate(132%) hue-rotate(262deg) brightness(120%) contrast(100%);"
-              />
+            <p class='text-lg'>{key.body}</p>
             </div>
-          ))}
-        </div>
-      </div>
-      <div>
-        {keys_right.map(key => (
-          <div class='mb-6'>
-            <div class='mb-2'>
-              <h4 class='text-xl font-semibold text-slate-200'>
-                {key.data.title}
-              </h4>
-            </div>
-            <p class='text-lg text-slate-300'>
-              {key.body}
-            </p>
           </div>
-        ))}
-      </div>
+        ))
+      }
     </div>
   </div>
 </section>
