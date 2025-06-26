@@ -15,17 +15,17 @@ const articles = [
 ]
 ---
 
-<section class='w-full bg-violet-900 flex flex-col items-center justify-center'>
+<section class='py-10 lg:py-20 px-5 lg:px-40 w-full bg-secondary-bg flex flex-col items-center justify-center'>
   <div
-    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] px-8 py-6 lg:px-0'
+    class='flex flex-col items-center justify-center'
   >
     <div>
       <div class='mb-10'>
-        <h2 class='text-4xl txt-center text-fuchsia-500 font-bold'>
+        <h2 class='text-5xl lg:text-6xl text-center text-secondary-text font-bold'>
           Propuestas de Reforma Constitucional
         </h2>
       </div>
-      <p class='text-lg text-slate-300'>
+      <p class='text-lg text-primary-text'>
         El proyecto de referendo propone adiciones y creaciones de artículos en
         la Constitución Política de Colombia para abordar la protección laboral
         en la informalidad y frente a la automatización. Se busca garantizar
@@ -34,16 +34,18 @@ const articles = [
         transitoria y proteger al campesinado y mujeres rurales.
       </p>
     </div>
-    <div class='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6'>
+    <div class='mt-10 w-full flex flex-col gap-15'>
       {
         articles.map(article => (
-          <div class='py-6 px-8 bg-indigo-900 rounded-lg min-h-70'>
-            <div class='mb-2'>
-              <h4 class='text-xl font-semibold text-slate-200'>
+          <div
+          style="border-radius: 25px 25px 0 25px;"
+          class='py-12 px-12 bg-sidebar '>
+            <div class='mb-4'>
+              <h4 class='text-2xl font-semibold text-secondary-bg'>
                 {article.title}
               </h4>
             </div>
-            <p class='text-lg text-slate-300'>{article.body}</p>
+            <p class='text-lg text-secondary-bg'>{article.body}</p>
           </div>
         ))
       }
