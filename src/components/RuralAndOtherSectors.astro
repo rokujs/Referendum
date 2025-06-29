@@ -1,71 +1,76 @@
 ---
 const points = [
   {
-    title: 'Campesinado',
-    body: 'Reconocimiento y protección especial, acceso a tierra y medios de producción.',
-    icon: '/tractor.svg'
+    title: "Campesinado",
+    body: "Reconocimiento y protección especial, acceso a tierra y medios de producción.",
+    icon: "/labor_protection.png",
   },
   {
-    title: 'Mujeres Rurales',
-    body: 'Valoración económica del trabajo no remunerado y acceso prioritario a la tierra.',
-    icon: '/women.svg'
+    title: "Mujeres Rurales",
+    body: "Valoración económica del trabajo no remunerado y acceso prioritario a la tierra.",
+    icon: "/labor_protection.png",
   },
   {
-    title: 'Voluntarios',
-    body: 'Reconocimiento del valor social y protección mínima en salud e integridad.',
-    icon: '/hands-helping.svg'
+    title: "Voluntarios",
+    body: "Reconocimiento del valor social y protección mínima en salud e integridad.",
+    icon: "/labor_protection.png",
   },
   {
-    title: 'Aprendices',
-    body: 'Condiciones mínimas de dignidad, bienestar y seguridad social.',
-    icon: 'text-book.svg'
-  }
+    title: "Aprendices",
+    body: "Condiciones mínimas de dignidad, bienestar y seguridad social.",
+    icon: "/labor_protection.png",
+  },
 ]
 ---
 
 <section
-  class='py-8 px-12 lg:py-16 lg:px-24 w-full bg-pink-300 flex flex-col items-center justify-center'
+  class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center'
 >
-  <div class='w-full lg:max-w-[50vw]'>
-    <div class='flex items-center justify-center'>
-      <h2 class='text-4xl txt-center text-indigo-800 font-bold'>Protección al Campesinado y Otros Sectores</h2>
+  <div
+    class='flex flex-col items-center justify-center w-full bg-secondary-bg px-8 py-10 lg:py-14 lg:px-20'
+  >
+    <div class='w-full'>
+      <h2 class='text-5xl lg:text-6xl text-sidebar font-bold'>
+        Protección al Campesinado y Otros Sectores
+      </h2>
     </div>
-    <div class='my-16'>
-      <p class='text-lg text-slate-800 mb-8'>
-        El referendo busca ampliar la protección constitucional a sectores vulnerables. Se propone reconocer al campesinado como sujeto de especial protección, garantizando sus derechos individuales y colectivos, incluyendo acceso a la tierra y medios de producción. Además, se busca reconocer y valorar el trabajo no remunerado de las mujeres rurales, asegurando su acceso prioritario a la tierra y mecanismos de ingreso mínimo vital.
+    <div class='my-16 text-sidebar'>
+      <p class='text-lg mb-8'>
+        El referendo busca ampliar la protección constitucional a sectores
+        vulnerables. Se propone reconocer al campesinado como sujeto de especial
+        protección, garantizando sus derechos individuales y colectivos,
+        incluyendo acceso a la tierra y medios de producción. Además, se busca
+        reconocer y valorar el trabajo no remunerado de las mujeres rurales,
+        asegurando su acceso prioritario a la tierra y mecanismos de ingreso
+        mínimo vital.
       </p>
-      <p class='text-lg text-slate-800'>
-        También se busca reconocer el valor del trabajo voluntario y garantizar condiciones dignas para aprendices en formación, asegurando que su aporte productivo no sea precarizado.
+      <p class='text-lg'>
+        También se busca reconocer el valor del trabajo voluntario y garantizar
+        condiciones dignas para aprendices en formación, asegurando que su
+        aporte productivo no sea precarizado.
       </p>
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-4">
-      {points.map((point) => (
-        <div class='flex'>
-          <div class='w-[100px] mr-3'>
-            <div class='inline-block'>
-              <img
-                style="filter: brightness(0) saturate(100%) invert(16%) sepia(94%) saturate(4595%) hue-rotate(258deg) brightness(66%) contrast(125%);"
-                src={point.icon}
-                width='30'
-                height='30'
-                alt={point.title + ' Icon'}
-              />
-            </div>
-          </div>
-          <div>
-            <div class="mb-2">
-              <h5 class="text-xl font-semibold text-indigo-800">
+    <div class='grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-4'>
+      {
+        points.map(point => (
+          <div class='bg-sidebar flex flex-col items-center py-8 px-6 rounded-lg'>
+            <div>
+              <h5 class='text-2xl font-semibold text-secondary-bg'>
                 {point.title}
               </h5>
             </div>
+            <div class='w-50 my-10'>
+                <img
+                  src={point.icon}
+                  alt={point.title + " Icon"}
+                />
+            </div>
             <div>
-              <p class="text-lg text-slate800">
-                {point.body}
-              </p>
+              <p class='text-lg text-primary-bg'>{point.body}</p>
             </div>
           </div>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </section>
