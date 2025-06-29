@@ -1,50 +1,68 @@
----
-const articles = [
-  {
-    title: "Revisión Formal",
-    body: "Autorizar la revisión formal del proyecto de referendo.",
-  },
-  {
-    title: "Aprobación de Formato",
-    body: "Aprobar el formato para la recolección de apoyos ciudadanos.",
-  },
-  {
-    title: "Validación y Registro",
-    body: "Proceder con el trámite de validación y registro del Comité Promotor.",
-  },
-]
----
-
-<section class='w-full bg-violet-900 flex flex-col items-center justify-center'>
-  <div
-    class='flex flex-col items-center justify-center min-h-[60vh] max-w-[90vw] lg:max-w-[50vw] px-8 py-6 lg:px-0'
-  >
+<section
+  class='py-10 lg:py-20 px-5 lg:px-40 w-full bg-secondary-bg flex flex-col items-center justify-center relative'
+>
+  <div>
     <div>
       <div class='mb-10'>
-        <h2 class='text-4xl txt-center text-fuchsia-500 font-bold'>
+        <h2 class='text-5xl lg:text-6xl text-secondary-text font-bold'>
           Comité Promotor y Solicitudes
         </h2>
       </div>
-      <p class='text-lg text-slate-300 mb-8'>
-        El comité promotor de esta iniciativa se denomina "COMITÉ PROMOTOR “SOMOS EL PODER DE LA GENTE”". Este comité es el encargado de liderar el proceso de recolección de apoyos ciudadanos y de coordinar con la Registraduría Nacional del Estado Civil.
+      <p class='text-lg text-primary-text mb-8'>
+        El comité promotor de esta iniciativa se denomina "COMITÉ PROMOTOR
+        “SOMOS EL PODER DE LA GENTE”". Este comité es el encargado de liderar el
+        proceso de recolección de apoyos ciudadanos y de coordinar con la
+        Registraduría Nacional del Estado Civil.
       </p>
-      <p class='text-lg text-slate-300'>
-        Se solicita a la Registraduría Nacional del Estado Civil autorizar la revisión formal del proyecto de referendo, aprobar el formato para la recolección de apoyos ciudadanos y proceder con el trámite de validación y registro del Comité Promotor conforme a la ley. Se adjuntan copias de los documentos de identidad de los integrantes, la exposición de motivos y el texto del proyecto normativo.
+      <p class='text-lg text-primary-text'>
+        Se solicita a la Registraduría Nacional del Estado Civil autorizar la
+        revisión formal del proyecto de referendo, aprobar el formato para la
+        recolección de apoyos ciudadanos y proceder con el trámite de validación
+        y registro del Comité Promotor conforme a la ley. Se adjuntan copias de
+        los documentos de identidad de los integrantes, la exposición de motivos
+        y el texto del proyecto normativo.
       </p>
     </div>
-    <div class='mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6'>
-      {
-        articles.map(article => (
-          <div class='py-6 px-8 bg-indigo-900 rounded-lg'>
-            <div class='mb-2'>
-              <h5 class='text-xl font-semibold text-slate-200'>
-                {article.title}
-              </h5>
-            </div>
-            <p class='text-lg text-slate-300'>{article.body}</p>
+    <div class="mt-20 h-170 lg:h-100">
+      <div class='grid grid-rows-2 grid-cols-2 absolute right-0 left-0 gap-8'>
+        <div
+          style='border-radius: 0 10px 10px 0;'
+          class='py-8 px-12 bg-secondary-text text-right'
+        >
+          <div class='mb-2'>
+            <h5 class='text-2xl font-semibold text-primary-bg'>
+              Revisión Formal
+            </h5>
           </div>
-        ))
-      }
+          <p class='text-lg text-primary-bg'>
+            Autorizar la revisión formal del proyecto de referendo.
+          </p>
+        </div>
+        <div
+          style='border-radius: 10px 0 0 10px;'
+          class='py-8 px-12 bg-secondary-text'
+        >
+          <div class='mb-2'>
+            <h5 class='text-2xl font-semibold text-primary-bg'>
+              Aprobación de Formato
+            </h5>
+          </div>
+          <p class='text-lg text-primary-bg'>
+            Aprobar el formato para la recolección de apoyos ciudadanos.
+          </p>
+        </div>
+        <div class='py-8 px-12 bg-secondary-text rounded-xl col-span-full w-fit h-fit mx-auto text-center'>
+          <div class='mb-2'>
+            <h5 class='text-2xl font-semibold text-primary-bg'>
+              Validación y Registro
+            </h5>
+          </div>
+          <p class='text-lg text-primary-bg'>
+            Proceder con el trámite de validación y registro del Comité
+            Promotor.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
