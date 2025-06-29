@@ -24,17 +24,16 @@ const questions = [
 ---
 
 <section
-  class='w-full bg-pink-300 flex flex-col items-center justify-center py-10 lg:py-30 px-4 lg:px-12'
+  class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center'
 >
   <div
-    style='box-shadow: 10px 10px 0px 3px var(--color-fuchsia-500);'
-    class='flex flex-col items-center justify-center max-w-[90vw] lg:max-w-[50vw] bg-violet-700 px-8 py-6 lg:py-14 lg:px-16 rounded-lg'
+    class='flex flex-col items-center justify-center w-full bg-primary-bg px-8 py-10 lg:py-14 lg:px-20 border-4 border-sidebar'
   >
-    <div>
-      <h2 class='text-4xl txt-center text-fuchsia-500 mb-12 font-bold'>
+    <div class="w-full">
+      <h2 class='text-5xl lg:text-6xl text-sidebar text-center mb-12 font-bold'>
         Preguntas Clave del Referendo
       </h2>
-      <p class='text-lg text-slate-200'>
+      <p class='text-lg text-sidebar'>
         El referendo someterá a votación popular cuatro preguntas fundamentales
         que buscan reformar la Constitución para proteger los derechos laborales
         y sociales en Colombia. Estas preguntas abordan la informalidad, la
@@ -45,34 +44,26 @@ const questions = [
     <div class='mt-10 flex flex-col'>
       {
         questions.map((question, i) => (
-      <div>
+      <div class="bg-secondary-bg mb-5 px-5">
         <button
           onclick={`toggleAccordion(${i})`}
-          class='w-full flex items-center py-5 text-slate-200 font-semibold'
+          class='w-full flex justify-between items-center py-5 text-sidebar font-semibold'
         >
+          <span class="text-xl text-left">{question.question}</span>
           <span
             id={'icon-' + i}
-            class='text-slate-200 transition-transform duration-300 mr-3'
+            class='text-sidebar transition-transform duration-300 mr-3'
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              viewBox='0 0 16 16'
-              fill='currentColor'
-              class='w-4 h-4'
-            >
-              <path
-                fill-rule='evenodd'
-                d='M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z'
-                clip-rule='evenodd'></path>
-            </svg>
+           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
+        <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+      </svg>
           </span>
-          <span class="text-xl text-left">{question.question}</span>
         </button>
         <div
           id={'content-' + i}
           class='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
         >
-          <div class='pb-5 ml-10 text-lg text-slate-200'>
+          <div class='pb-5 ml-2 text-lg text-sidebar'>
             <p>{question.description}</p>
           </div>
         </div>
@@ -94,14 +85,14 @@ const questions = [
 
     // SVG for Down icon
     const downSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
         <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
       </svg>
     `
 
     // SVG for Up icon
     const upSVG = `
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-4 h-4">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
         <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
       </svg>
     `
@@ -109,10 +100,10 @@ const questions = [
     // Toggle the content's max-height for smooth opening and closing
     if (content.style.maxHeight && content.style.maxHeight !== "0px") {
       content.style.maxHeight = "0"
-      icon.innerHTML = upSVG
+      icon.innerHTML = downSVG
     } else {
       content.style.maxHeight = content.scrollHeight + "px"
-      icon.innerHTML = downSVG
+      icon.innerHTML = upSVG
     }
   }
 
