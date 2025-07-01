@@ -31,7 +31,13 @@ const key_list = keys.sort((a, b) => a.data.order - b.data.order)
         key_list.map(key => (
           <div class='bg-sidebar h-full min-h-70 rounded-xl'>
             <div class="w-40 -mt-20 mx-auto">
-              <img class="w-full" src={key.data.image} alt=`${key.data.image} image` />
+              <img
+                loading="lazy"
+                decoding="async"
+                class="w-full"
+                src={key.data.image}
+                alt=`${key.data.image} image`
+              />
             </div>
             <div class="text-subtitle-sidebar px-10 py-5">
             <div class='my-7'>

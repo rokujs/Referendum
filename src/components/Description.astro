@@ -31,6 +31,8 @@ const points = points_collection.sort((a, b) => a.data.order - b.data.order);
           <div class='w-70 mb-5 lg:mb-0'>
             <div class=`inline-block ${index % 2 !== 0 ? "lg:mr-10" : "lg:ml-10"}`>
               <img
+                loading="lazy"
+                decoding="async"
                 src={point.data.icon}
                 alt={point.data.title + ' Icon'}
               />
