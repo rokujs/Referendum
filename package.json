@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "format": "exec prettier . --write",
+    "deploy": "wrangler pages deploy ./dist"
   },
   "dependencies": {
     "@astrojs/cloudflare": "12.5.4",
