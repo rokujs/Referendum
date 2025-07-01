@@ -19,21 +19,21 @@ const list = [
     title: "Inspección Eficaz",
     description: "Impulsar un sistema de control del trabajo decente.",
   },
-]
+];
 ---
 
 <section
-  id='finalidad'
-  class='py-10 lg:py-20 px-5 lg:px-40 w-full bg-secondary-bg flex flex-col items-center justify-center'
+  id="finalidad"
+  class="py-10 lg:py-20 px-5 lg:px-40 w-full bg-secondary-bg flex flex-col items-center justify-center"
 >
-  <div class='w-full text-sidebar'>
+  <div class="w-full text-sidebar">
     <div>
-      <h2 class='text-5xl lg:text-6xl font-bold'>
+      <h2 class="text-5xl lg:text-6xl font-bold">
         Finalidad y Justificación del Referendo
       </h2>
     </div>
-    <div class='text-lg my-16'>
-      <p class='mb-8'>
+    <div class="text-lg my-16">
+      <p class="mb-8">
         El referendo busca una reforma laboral que reconozca nuevas formas de
         empleo, establezca mecanismos de formalización y garantice derechos
         básicos para todos los trabajadores. Promueve la equidad laboral y un
@@ -52,21 +52,21 @@ const list = [
     <div>
       {
         list.map((item, i) => (
-          <div class='mb-6 flex items-start'>
-            <div class='w-40 h-40'>
-              <div class='flex items-center justify-center w-full h-full'>
-                <div class='arrow-down-number'>
-                  <span class='text-7xl font-bold -mb-5 text-secondary-bg'>
+          <div class="mb-6 flex items-start">
+            <div class="w-40 h-40">
+              <div class="flex items-center justify-center w-full h-full">
+                <div class="arrow-down-number">
+                  <span class="text-7xl font-bold -mb-5 text-secondary-bg">
                     {i + 1}
                   </span>
                 </div>
               </div>
             </div>
-            <div class='ml-4'>
-              <div class='mb-2'>
-                <h3 class='text-2xl font-bold'>{item.title}</h3>
+            <div class="ml-4">
+              <div class="mb-2">
+                <h3 class="text-2xl font-bold">{item.title}</h3>
               </div>
-              <p class='text-lg'>{item.description}</p>
+              <p class="text-lg">{item.description}</p>
             </div>
           </div>
         ))

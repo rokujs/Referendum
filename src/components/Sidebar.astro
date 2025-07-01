@@ -12,96 +12,96 @@ const items = [
   { title: "Reforma pensional y vigencia", link: "#pensional" },
   { title: "Preguntas clave el referendo", link: "#preguntas" },
   { title: "Comité promotor y solicitudes", link: "#comite" },
-]
+];
 ---
 
-<div class='sticky top-0 lg:w-[40vw] h-screen'>
+<div class="sticky top-0 lg:w-[40vw] h-screen">
   <div
-    id='sidebar'
-    class='hidden lg:flex flex-col justify-evenly h-screen w-full bg-sidebar text-center px-16 py-16'
+    id="sidebar"
+    class="hidden lg:flex flex-col justify-evenly h-screen w-full bg-sidebar text-center px-16 py-16"
   >
-    <div class='w-full'>
+    <div class="w-full">
       <div>
-        <h1 class='font-bold text-title-sidebar'>
-          <span class='block text-8xl'>REFERENDO</span>
-          <span class='block text-6xl'>CONSTITUCIONAL</span>
+        <h1 class="font-bold text-title-sidebar">
+          <span class="block text-8xl">REFERENDO</span>
+          <span class="block text-6xl">CONSTITUCIONAL</span>
         </h1>
       </div>
-      <div class='mt-5'>
-        <p class='text-lg italic text-subtitle-sidebar'>
+      <div class="mt-5">
+        <p class="text-lg italic text-subtitle-sidebar">
           Por un trabajo digno en <b>Colombia</b>
         </p>
       </div>
     </div>
-    <div class='w-full flex justify-center items-center'>
-      <img src='/i_vote_yes.png' alt='Yo voto sí Imagen' loading='lazy' />
+    <div class="w-full flex justify-center items-center">
+      <img src="/i_vote_yes.png" alt="Yo voto sí Imagen" loading="lazy" />
     </div>
   </div>
   <div
-    class='absolute right-0 top-0 w-screen h-20 lg:h-0 bg-sidebar flex items-center px-5'
+    class="absolute right-0 top-0 w-screen h-20 lg:h-0 bg-sidebar flex items-center px-5"
   >
-    <h2 class='text-lg text-primary-bg font-semibold lg:hidden'>
+    <h2 class="text-lg text-primary-bg font-semibold lg:hidden">
       REFERENDO CONSTITUCIONAL
     </h2>
     <div
-      id='boxOpenMenuBtn'
-      class='block absolute top-0 right-0 w-20 h-20 flex justify-center align-items'
+      id="boxOpenMenuBtn"
+      class="block absolute top-0 right-0 w-20 h-20 flex justify-center align-items"
     >
       <button
-        id='openMenuBtn'
-        aria-label='Abrir menú'
-        class='text-title-sidebar cursor-pointer'
+        id="openMenuBtn"
+        aria-label="Abrir menú"
+        class="text-title-sidebar cursor-pointer"
       >
         <svg
-          width='64'
-          height='64'
-          fill='none'
-          stroke='currentColor'
-          stroke-width='2'
-          viewBox='0 0 32 32'
+          width="64"
+          height="64"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 32 32"
           ><path
-            stroke-linecap='round'
-            stroke-linejoin='round'
-            d='M4 6h16M4 12h16M4 18h16'></path></svg
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16"></path></svg
         >
       </button>
     </div>
   </div>
 
   <div
-    id='boxCloseMenuBtn'
-    class='hidden absolute top-0 right-0 w-20 h-20 flex justify-center align-items z-3'
+    id="boxCloseMenuBtn"
+    class="hidden absolute top-0 right-0 w-20 h-20 flex justify-center align-items z-3"
   >
     <button
-      id='closeMenuBtn'
-      aria-label='Cerrar menú'
-      class='text-title-sidebar cursor-pointer'
+      id="closeMenuBtn"
+      aria-label="Cerrar menú"
+      class="text-title-sidebar cursor-pointer"
     >
       <svg
-        width='64'
-        height='64'
-        fill='none'
-        stroke='currentColor'
-        stroke-width='2'
-        viewBox='0 0 32 32'
+        width="64"
+        height="64"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 32 32"
         ><path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M6 18L18 6M6 6l12 12'></path></svg
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path></svg
       >
     </button>
   </div>
-  <div id='menu' class='w-full flex flex-row-reverse hidden'>
+  <div id="menu" class="w-full flex flex-row-reverse hidden">
     <nav
-      class='bg-sidebar flex flex-col gap-6 absolute w-screen lg:w-full h-screen'
+      class="bg-sidebar flex flex-col gap-6 absolute w-screen lg:w-full h-screen"
     >
-      <ul class='flex flex-col mt-10 lg:mt-20'>
+      <ul class="flex flex-col mt-10 lg:mt-20">
         {
-          items.map(item => (
-            <li class='border-b-4 border-subtitle-sidebar py-2 lg:py-8 px-10'>
+          items.map((item) => (
+            <li class="border-b-4 border-subtitle-sidebar py-2 lg:py-8 px-10">
               <a
                 href={item.link}
-                class='text-lg font-semibold text-subtitle-sidebar cursor-pointer menu-link py-5 block'
+                class="text-lg font-semibold text-subtitle-sidebar cursor-pointer menu-link py-5 block"
               >
                 {item.title}
               </a>
@@ -116,29 +116,29 @@ const items = [
 <script is:inline>
   // Pure JS hamburger menu
   if (typeof window !== "undefined") {
-    const openBtn = document.getElementById("openMenuBtn")
-    const closeBtn = document.getElementById("closeMenuBtn")
-    const boxOpenBtn = document.getElementById("boxOpenMenuBtn")
-    const boxCloseBtn = document.getElementById("boxCloseMenuBtn")
-    const menu = document.getElementById("menu")
-    const sidebar = document.getElementById("sidebar")
+    const openBtn = document.getElementById("openMenuBtn");
+    const closeBtn = document.getElementById("closeMenuBtn");
+    const boxOpenBtn = document.getElementById("boxOpenMenuBtn");
+    const boxCloseBtn = document.getElementById("boxCloseMenuBtn");
+    const menu = document.getElementById("menu");
+    const sidebar = document.getElementById("sidebar");
     function openMenu() {
-      menu.classList.remove("hidden")
-      boxCloseBtn.classList.remove("hidden")
-      boxOpenBtn.classList.add("hidden")
-      sidebar.classList.add("lg:hidden")
+      menu.classList.remove("hidden");
+      boxCloseBtn.classList.remove("hidden");
+      boxOpenBtn.classList.add("hidden");
+      sidebar.classList.add("lg:hidden");
     }
     function closeMenu() {
-      menu.classList.add("hidden")
-      boxCloseBtn.classList.add("hidden")
-      boxOpenBtn.classList.remove("hidden")
-      sidebar.classList.remove("lg:hidden")
+      menu.classList.add("hidden");
+      boxCloseBtn.classList.add("hidden");
+      boxOpenBtn.classList.remove("hidden");
+      sidebar.classList.remove("lg:hidden");
     }
-    openBtn && openBtn.addEventListener("click", openMenu)
-    closeBtn && closeBtn.addEventListener("click", closeMenu)
+    openBtn && openBtn.addEventListener("click", openMenu);
+    closeBtn && closeBtn.addEventListener("click", closeMenu);
     // Close menu when clicking a link
-    document.querySelectorAll(".menu-link").forEach(link => {
-      link.addEventListener("click", closeMenu)
-    })
+    document.querySelectorAll(".menu-link").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
   }
 </script>

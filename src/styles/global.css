@@ -1,20 +1,27 @@
 @import "tailwindcss";
 
-
-	h1, h2, h3, h4, h5, h6 {
-		font-family: 'Newsreader', serif;
-	}
-	p, a, li, span {
-		font-family: 'Roboto', sans-serif;
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Newsreader", serif;
+}
+p,
+a,
+li,
+span {
+  font-family: "Roboto", sans-serif;
+}
 
 @theme {
-  --color-sidebar: #DBDBDB;
-	--color-title-sidebar: #410066;
-	--color-subtitle-sidebar: #13001B;
-	--color-primary-bg: #13001B;
-	--color-secondary-bg: #260833;
-	--color-primary-text: #DBDBDB;
-	--color-secondary-text: #FFD700;
-	--color-box-border: #A76FBF;
+  --color-sidebar: #dbdbdb;
+  --color-title-sidebar: #410066;
+  --color-subtitle-sidebar: #13001b;
+  --color-primary-bg: #13001b;
+  --color-secondary-bg: #260833;
+  --color-primary-text: #dbdbdb;
+  --color-secondary-text: #ffd700;
+  --color-box-border: #a76fbf;
 }

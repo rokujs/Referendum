@@ -20,21 +20,21 @@ const questions = [
     description:
       "¿Está usted de acuerdo con reconocer y garantizar derechos mínimos a quienes prestan servicios voluntarios en ONG y a los aprendices técnicos y tecnológicos, incluyendo protección en salud, dignidad y condiciones de formación adecuadas?",
   },
-]
+];
 ---
 
 <section
-  id='preguntas'
-  class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center'
+  id="preguntas"
+  class="py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center"
 >
   <div
-    class='flex flex-col items-center justify-center w-full bg-primary-bg px-8 py-10 lg:py-14 lg:px-20 border-4 border-sidebar'
+    class="flex flex-col items-center justify-center w-full bg-primary-bg px-8 py-10 lg:py-14 lg:px-20 border-4 border-sidebar"
   >
-    <div class='w-full'>
-      <h2 class='text-5xl lg:text-6xl text-sidebar text-center mb-12 font-bold'>
+    <div class="w-full">
+      <h2 class="text-5xl lg:text-6xl text-sidebar text-center mb-12 font-bold">
         Preguntas Clave del Referendo
       </h2>
-      <p class='text-lg text-sidebar'>
+      <p class="text-lg text-sidebar">
         El referendo someterá a votación popular cuatro preguntas fundamentales
         que buscan reformar la Constitución para proteger los derechos laborales
         y sociales en Colombia. Estas preguntas abordan la informalidad, la
@@ -42,38 +42,38 @@ const questions = [
         voluntarios y aprendices.
       </p>
     </div>
-    <div class='mt-10 flex flex-col'>
+    <div class="mt-10 flex flex-col">
       {
         questions.map((question, i) => (
-          <div class='bg-secondary-bg mb-5 px-5'>
+          <div class="bg-secondary-bg mb-5 px-5">
             <button
               onclick={`toggleAccordion(${i})`}
-              class='w-full flex justify-between items-center py-5 text-sidebar font-semibold'
+              class="w-full flex justify-between items-center py-5 text-sidebar font-semibold"
             >
-              <span class='text-xl text-left'>{question.question}</span>
+              <span class="text-xl text-left">{question.question}</span>
               <span
                 id={"icon-" + i}
-                class='text-sidebar transition-transform duration-300 mr-3'
+                class="text-sidebar transition-transform duration-300 mr-3"
               >
                 <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  viewBox='0 0 16 16'
-                  fill='currentColor'
-                  class='w-8 h-8'
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  fill="currentColor"
+                  class="w-8 h-8"
                 >
                   <path
-                    fill-rule='evenodd'
-                    d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'
-                    clip-rule='evenodd'
+                    fill-rule="evenodd"
+                    d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z"
+                    clip-rule="evenodd"
                   />
                 </svg>
               </span>
             </button>
             <div
               id={"content-" + i}
-              class='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
+              class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
             >
-              <div class='pb-5 ml-2 text-lg text-sidebar'>
+              <div class="pb-5 ml-2 text-lg text-sidebar">
                 <p>{question.description}</p>
               </div>
             </div>
@@ -87,36 +87,36 @@ const questions = [
 <script>
   function toggleAccordion(index: number) {
     const content = document.getElementById(
-      `content-${index}`
-    ) as HTMLElement | null
-    const icon = document.getElementById(`icon-${index}`) as HTMLElement | null
+      `content-${index}`,
+    ) as HTMLElement | null;
+    const icon = document.getElementById(`icon-${index}`) as HTMLElement | null;
 
-    if (!content || !icon) return
+    if (!content || !icon) return;
 
     // SVG for Down icon
     const downSVG = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
         <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
       </svg>
-    `
+    `;
 
     // SVG for Up icon
     const upSVG = `
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
         <path fill-rule="evenodd" d="M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z" clip-rule="evenodd" />
       </svg>
-    `
+    `;
 
     // Toggle the content's max-height for smooth opening and closing
     if (content.style.maxHeight && content.style.maxHeight !== "0px") {
-      content.style.maxHeight = "0"
-      icon.innerHTML = downSVG
+      content.style.maxHeight = "0";
+      icon.innerHTML = downSVG;
     } else {
-      content.style.maxHeight = content.scrollHeight + "px"
-      icon.innerHTML = upSVG
+      content.style.maxHeight = content.scrollHeight + "px";
+      icon.innerHTML = upSVG;
     }
   }
 
   // @ts-ignore
-  window.toggleAccordion = toggleAccordion
+  window.toggleAccordion = toggleAccordion;
 </script>

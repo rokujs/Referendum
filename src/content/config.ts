@@ -6,14 +6,14 @@ const points = defineCollection({
     icon: z.string(),
     order: z.number(),
   }),
-})
+});
 
 const keys = defineCollection({
   schema: z.object({
     title: z.string(),
     image: z.string(),
     order: z.number(),
-  })
-})
+  }),
+});
 
 export const collections = { points, keys };

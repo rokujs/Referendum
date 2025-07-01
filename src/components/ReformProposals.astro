@@ -12,23 +12,23 @@ const articles = [
     title: "Artículo 3: Renta Básica Transitoria",
     body: "Creación de un derecho a renta básica transitoria para quienes pierdan ingresos por automatización, reglamentado por ley.",
   },
-]
+];
 ---
 
 <section
-  id='propuestas'
-  class='py-10 lg:py-20 px-5 lg:px-40 w-full bg-primary-bg flex flex-col items-center justify-center'
+  id="propuestas"
+  class="py-10 lg:py-20 px-5 lg:px-40 w-full bg-primary-bg flex flex-col items-center justify-center"
 >
-  <div class='flex flex-col items-center justify-center'>
+  <div class="flex flex-col items-center justify-center">
     <div>
-      <div class='mb-10'>
+      <div class="mb-10">
         <h2
-          class='text-5xl lg:text-6xl text-center text-secondary-text font-bold'
+          class="text-5xl lg:text-6xl text-center text-secondary-text font-bold"
         >
           Propuestas de Reforma Constitucional
         </h2>
       </div>
-      <p class='text-lg text-primary-text'>
+      <p class="text-lg text-primary-text">
         El proyecto de referendo propone adiciones y creaciones de artículos en
         la Constitución Política de Colombia para abordar la protección laboral
         en la informalidad y frente a la automatización. Se busca garantizar
@@ -37,19 +37,19 @@ const articles = [
         transitoria y proteger al campesinado y mujeres rurales.
       </p>
     </div>
-    <div class='mt-10 w-full flex flex-col gap-15'>
+    <div class="mt-10 w-full flex flex-col gap-15">
       {
-        articles.map(article => (
+        articles.map((article) => (
           <div
-            style='border-radius: 25px 25px 0 25px;'
-            class='py-12 px-12 bg-sidebar '
+            style="border-radius: 25px 25px 0 25px;"
+            class="py-12 px-12 bg-sidebar "
           >
-            <div class='mb-4'>
-              <h4 class='text-2xl font-semibold text-secondary-bg'>
+            <div class="mb-4">
+              <h4 class="text-2xl font-semibold text-secondary-bg">
                 {article.title}
               </h4>
             </div>
-            <p class='text-lg text-secondary-bg'>{article.body}</p>
+            <p class="text-lg text-secondary-bg">{article.body}</p>
           </div>
         ))
       }
