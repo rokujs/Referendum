@@ -1,14 +1,17 @@
 ---
 const items = [
-  "La iniciativa ciudadana por el referendo",
-  "Desafiós actuales del mercado laboral colombiano",
-  "Objetivos clave del referendo",
-  "Fianlidad y justificación del referendo",
-  "Propuestas de reforma constitucional",
-  "Protección al campesinado y otros sectores",
-  "Reforma pensional y vigencia",
-  "Preguntas clave el referendo",
-  "Comité promotor y solicitudes",
+  { title: "La iniciativa ciudadana por el referendo", link: "#iniciativa" },
+  {
+    title: "Desafíos actuales del mercado laboral colombiano",
+    link: "#desafios",
+  },
+  { title: "Objetivos clave del referendo", link: "#objetivos" },
+  { title: "Finalidad y justificación del referendo", link: "#finalidad" },
+  { title: "Propuestas de reforma constitucional", link: "#propuestas" },
+  { title: "Protección al campesinado y otros sectores", link: "#campesinado" },
+  { title: "Reforma pensional y vigencia", link: "#pensional" },
+  { title: "Preguntas clave el referendo", link: "#preguntas" },
+  { title: "Comité promotor y solicitudes", link: "#comite" },
 ]
 ---
 
@@ -17,45 +20,52 @@ const items = [
     id='sidebar'
     class='hidden lg:flex flex-col justify-evenly h-screen w-full bg-sidebar text-center px-16 py-16'
   >
-  <div class="w-full">
-    <div>
-      <h1 class='font-bold text-title-sidebar'>
-        <span class='block text-8xl'>REFERENDO</span>
-        <span class='block text-6xl'>CONSTITUCIONAL</span>
-      </h1>
+    <div class='w-full'>
+      <div>
+        <h1 class='font-bold text-title-sidebar'>
+          <span class='block text-8xl'>REFERENDO</span>
+          <span class='block text-6xl'>CONSTITUCIONAL</span>
+        </h1>
+      </div>
+      <div class='mt-5'>
+        <p class='text-lg italic text-subtitle-sidebar'>
+          Por un trabajo digno en <b>Colombia</b>
+        </p>
+      </div>
     </div>
-    <div class='mt-5'>
-      <p class='text-lg italic text-subtitle-sidebar'>
-        Por un trabajo digno en <b>Colombia</b>
-      </p>
-    </div>
-  </div>
-    <div class="w-full flex justify-center items-center">
-      <img src="/i_vote_yes.png" alt="Yo voto sí Imagen" loading="lazy">
+    <div class='w-full flex justify-center items-center'>
+      <img src='/i_vote_yes.png' alt='Yo voto sí Imagen' loading='lazy' />
     </div>
   </div>
   <div
-    id='boxOpenMenuBtn'
-    class='block absolute top-0 right-0 w-20 h-20 flex justify-center align-items'
+    class='absolute right-0 top-0 w-screen h-20 lg:h-0 bg-sidebar flex items-center px-5'
   >
-    <button
-      id='openMenuBtn'
-      aria-label='Abrir menú'
-      class='text-title-sidebar cursor-pointer'
+    <h2 class='text-lg text-primary-bg font-semibold lg:hidden'>
+      REFERENDO CONSTITUCIONAL
+    </h2>
+    <div
+      id='boxOpenMenuBtn'
+      class='block absolute top-0 right-0 w-20 h-20 flex justify-center align-items'
     >
-      <svg
-        width='64'
-        height='64'
-        fill='none'
-        stroke='currentColor'
-        stroke-width='2'
-        viewBox='0 0 32 32'
-        ><path
-          stroke-linecap='round'
-          stroke-linejoin='round'
-          d='M4 6h16M4 12h16M4 18h16'></path></svg
+      <button
+        id='openMenuBtn'
+        aria-label='Abrir menú'
+        class='text-title-sidebar cursor-pointer'
       >
-    </button>
+        <svg
+          width='64'
+          height='64'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='2'
+          viewBox='0 0 32 32'
+          ><path
+            stroke-linecap='round'
+            stroke-linejoin='round'
+            d='M4 6h16M4 12h16M4 18h16'></path></svg
+        >
+      </button>
+    </div>
   </div>
 
   <div
@@ -90,10 +100,10 @@ const items = [
           items.map(item => (
             <li class='border-b-4 border-subtitle-sidebar py-2 lg:py-8 px-10'>
               <a
-                href='#'
+                href={item.link}
                 class='text-lg font-semibold text-subtitle-sidebar cursor-pointer menu-link py-5 block'
               >
-                {item}
+                {item.title}
               </a>
             </li>
           ))

@@ -24,12 +24,13 @@ const questions = [
 ---
 
 <section
+  id='preguntas'
   class='py-10 lg:py-20 px-5 lg:px-20 w-full bg-primary-bg flex flex-col items-center justify-center'
 >
   <div
     class='flex flex-col items-center justify-center w-full bg-primary-bg px-8 py-10 lg:py-14 lg:px-20 border-4 border-sidebar'
   >
-    <div class="w-full">
+    <div class='w-full'>
       <h2 class='text-5xl lg:text-6xl text-sidebar text-center mb-12 font-bold'>
         Preguntas Clave del Referendo
       </h2>
@@ -44,30 +45,39 @@ const questions = [
     <div class='mt-10 flex flex-col'>
       {
         questions.map((question, i) => (
-      <div class="bg-secondary-bg mb-5 px-5">
-        <button
-          onclick={`toggleAccordion(${i})`}
-          class='w-full flex justify-between items-center py-5 text-sidebar font-semibold'
-        >
-          <span class="text-xl text-left">{question.question}</span>
-          <span
-            id={'icon-' + i}
-            class='text-sidebar transition-transform duration-300 mr-3'
-          >
-           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" class="w-8 h-8">
-        <path fill-rule="evenodd" d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-      </svg>
-          </span>
-        </button>
-        <div
-          id={'content-' + i}
-          class='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
-        >
-          <div class='pb-5 ml-2 text-lg text-sidebar'>
-            <p>{question.description}</p>
+          <div class='bg-secondary-bg mb-5 px-5'>
+            <button
+              onclick={`toggleAccordion(${i})`}
+              class='w-full flex justify-between items-center py-5 text-sidebar font-semibold'
+            >
+              <span class='text-xl text-left'>{question.question}</span>
+              <span
+                id={"icon-" + i}
+                class='text-sidebar transition-transform duration-300 mr-3'
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  viewBox='0 0 16 16'
+                  fill='currentColor'
+                  class='w-8 h-8'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z'
+                    clip-rule='evenodd'
+                  />
+                </svg>
+              </span>
+            </button>
+            <div
+              id={"content-" + i}
+              class='max-h-0 overflow-hidden transition-all duration-300 ease-in-out'
+            >
+              <div class='pb-5 ml-2 text-lg text-sidebar'>
+                <p>{question.description}</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
         ))
       }
     </div>
